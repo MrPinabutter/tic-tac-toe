@@ -1,0 +1,14 @@
+.container-header {
+  align-items: center;
+  background-color: #1d3557;
+  display: flex;
+  height: 90px;
+  justify-content: center;
+  width: 100%;
+}
+
+.container-text {
+  color: white;
+  font-size: 40px;
+  font-family: 'Antic Slab', serif;
+}

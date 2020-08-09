@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+.main {
+  display: grid;
+  grid-template-columns: repeat(3 1fr);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game-container {
+  margin-top: 10%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-rows: 160px 160px 160px;
+  grid-template-columns: 160px 160px 160px;
+  grid-gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.block {
+  background-color: #a8dadc;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 2px;
+  transition: 0.2s;
+  width: 100%;
+  height: 100%;
+  font-size: 120px;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 10px;
+  border-color: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:focus {
+  border-radius: 6px;
+  outline: 0px auto white;
+  outline-offset: 0px;
+}
+
+.block:hover {
+  background-color: #5e60ce;
+}
+
+.modal {
+  position: 'absolute';
+  width: 400;
+  border: '2px solid #000';
+  padding: 50%,
 }

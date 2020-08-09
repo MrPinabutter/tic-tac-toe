@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  background-color: #d8e2dc;
+  height: 60px;
+  width: 100%;
+  margin-top: 40px;
+  background-color: #14213d;
+}
+
+.footer-text {
+  color: #e63946;
+  align-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  font-family: 'Antic Slab', serif;
+}
