@@ -5,6 +5,8 @@
   width: 100%;
   margin-top: 40px;
   background-color: #14213d;
+  bottom: 0;
+  position: absolute;
 }
 
 .footer-text {

@@ -12,7 +12,5 @@ Esse app roda no http://localhost:3000 no browser.
 ## Funções que faltam para finalizar o app:
 
 - Detectar empate
-- Alterar tela para caso empate
-- Exibir pontuação para jogador 'X' e jogador 'O'
 - possibilidade de customização de caracter jogável
 - Incluir alguma musica de fundo

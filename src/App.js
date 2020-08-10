@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import './App.css'
 
 function App() {
+  const [pontosX, setPontosX] = useState(0);
+  const [pontosO, setPontosO] = useState(0);
   
   const [a1, setA1] = useState(null);
   const [a2, setA2] = useState(null);
@@ -57,35 +59,50 @@ function App() {
   
   function verificaGanhou() {
     if (a1 === a2 && a2 === a3 && a1 !== null){
-      setGanhou(a1)
+      setGanhou(a1);
+      a1 === 'x' ? setPontosX(pontosX+1) : setPontosO(pontosO+1);
     }
     
     if (b1 === b2 && b2 === b3 && b1 !== null){
-      setGanhou(b1)
+      setGanhou(b1);
+      b1 === 'x' ? setPontosX(pontosX+1) : setPontosO(pontosO+1);
     }
     
     if (c1 === c2 && c2 === c3 && c1 !== null){
-      setGanhou(c1)
+      c1 === 'x' ? setPontosX(pontosX+1) : setPontosO(pontosO+1);
+      setGanhou(c1);
     }
     
     if (a1 === b1 && b1 === c1 && a1 !== null){
-      setGanhou(a1)
+      a1 === 'x' ? setPontosX(pontosX+1) : setPontosO(pontosO+1);
+      setGanhou(a1);
     }
     
     if (a2 === b2 && b2 === c2 && a2 !== null){
-      setGanhou(a2)
+      a2 === 'x' ? setPontosX(pontosX+1) : setPontosO(pontosO+1);
+      setGanhou(a2);
     }
     
     if (a3 === b3 && b3 === c3 && a3 !== null){
-      setGanhou(a3)
+      a3 === 'x' ? setPontosX(pontosX+1) : setPontosO(pontosO+1);
+      setGanhou(a3);
     }
     
     if (a1 === b2 && b2 === c3 && a1 !== null){
-      setGanhou(a1)
+      a1 === 'x' ? setPontosX(pontosX+1) : setPontosO(pontosO+1);
+      setGanhou(a1);
     }
     
-    if (a3 === b2 && b2 === c1 && a1 !== null){
-      setGanhou(a3)
+    if (a3 === b2 && b2 === c1 && a3 !== null){
+      a3 === 'x' ? setPontosX(pontosX+1) : setPontosO(pontosO+1);
+      setGanhou(a3);
+    }
+
+    if (a1 !== null && a2 !== null && a3 !== null){
+      if(b1 !== null && b2 !== null && b3 !== null){
+        if(c1 !== null && c2 !== null && c3 !== null)
+        setGanhou('opss, ninguem ganhou, houve um empate kkk');
+      }
     }
   }
   
@@ -125,6 +142,9 @@ function App() {
     <div className="container">
       <Header/>
       <div className="main">
+        <div className="pontos-x">X: {pontosX}</div>
+        <div className="pontos-o">O: {pontosO}</div>
+
         <div className="game-container">
           <Modal 
             open={ganhou}
@@ -134,7 +154,7 @@ function App() {
           >
             
             <div style={modalStyle} className={classes.paper} >
-               Ganhador do round: {ganhou}
+               Ganhador do round: '{ganhou}'
               <p id="simple-modal-description">
                 Aperte fora da tela para começar novamente.
               </p>
